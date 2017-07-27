@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>de.intarsys.opensource</groupId>
+  <artifactId>iscwt</artifactId>
+  <version>5.6</version>
+  <packaging>jar</packaging>
+
+  <name>iscwt</name>
+  <description>Intarsys window toolkit and basic rendering abstraction layer.</description>
+  <url>https://wiki.intarsys.de/display/Opensource/isFreeType</url>
+
+  <organization>
+    <name>Intarsys consulting GmbH</name>
+    <url>http://www.intarsys.de</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>BSD 3-Clause</name>
+      <url>http://www.opensource.org/licenses/BSD-3-Clause</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>intarsys</id>
+      <name>intarsys support</name>
+      <email>support@intarsys.de</email>
+    </developer>
+  </developers>
+
+  <properties>
+    <project.build.sourceEncoding>Cp1252</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+          <showDeprecation>true</showDeprecation>
+          <showWarnings>true</showWarnings>
+          <executable>/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home/bin/javac</executable>
+          <fork>true</fork>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>jcenter</id>
+      <url>https://jcenter.bintray.com/</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>de.intarsys.opensource</groupId>
+      <artifactId>isrt</artifactId>
+      <version>4.11</version>
+    </dependency>
+    <dependency>
+      <groupId>de.intarsys.opensource</groupId>
+      <artifactId>isfreetype</artifactId>
+      <version>5.6</version>
+    </dependency>
+  </dependencies>
+
+  <profiles>
+    <profile>
+      <id>MacOS-X-x86_64</id>
+      <activation>
+        <os>
+          <family>mac</family>
+          <arch>x86_64</arch>
+        </os>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>org.eclipse.swt</groupId>
+          <artifactId>org.eclipse.swt.cocoa.macosx.x86_64</artifactId>
+          <version>4.3</version>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
+</project>
